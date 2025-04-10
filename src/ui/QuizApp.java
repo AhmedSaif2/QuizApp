@@ -21,17 +21,14 @@ public class QuizApp {
 
         System.out.println("Hello, " + name + "!");
 
-        System.out.println(
-            """
-            Select the topic of the quiz:
-            1. Math
-            2. Science
-            3. Geography
-            4. Mixed
-            Enter your choice (1-4):""");
+        String[] topics = {"Math", "Science", "Geography", "Mixed"};
+        System.out.println("Select the topic of the quiz:");
+        for (int i=1;i<=4;i++){
+            System.out.println(i+". "+topics[i-1]);
+        }
+        System.out.println("Enter your choice (1-"+topics.length+"):");
         String topic;
         int choice = InputValidation.validate(1, 4);
-        String[] topics = {"Math", "Science", "Geography", "Mixed"};
         topic = topics[choice - 1];
 
         System.out.println(
